@@ -18,7 +18,6 @@ public class TestBase {
 
     @BeforeAll
     static void setup() {
-        System.out.println(System.getProperties());
 
         Configuration.startMaximized = true;
         addListener("AllureSelenide", new AllureSelenide());
@@ -28,7 +27,7 @@ public class TestBase {
         Configuration.browserCapabilities = capabilities;
 
         //        gradle clean test -Dweb.browser=opera
-        Configuration.browser = System.getProperty("web.browser", "chrome");
+ //       Configuration.browser = System.getProperty("web.browser", "chrome");
      //   Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
 
         String remoteWebDriver = System.getProperty("remote.web.driver");
@@ -37,11 +36,6 @@ public class TestBase {
             String user = driverConfig.remoteWebUser();
             String password = driverConfig.remoteWebPassword();
             Configuration.remote = String.format(remoteWebDriver, user, password);
-
-            System.out.println(user);
-            System.out.println(password);
-            System.out.println(remoteWebDriver);
-            System.out.println(String.format(remoteWebDriver, user, password));
         }
 
     }
