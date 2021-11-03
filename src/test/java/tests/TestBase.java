@@ -21,6 +21,9 @@ public class TestBase {
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
+
+        //        gradle clean test -Dweb.browser=opera
+        Configuration.browser = System.getProperty("web.browser", "chrome");
      //   Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
 
         String remoteWebDriver = System.getProperty("remoteWebDriver");
