@@ -48,8 +48,8 @@ public class TestBase {
 
 //         gradle clean test -Dremote.web.driver="https://user1:1234@selenoid.autotests.cloud/wd/hub/" \
 //        -Dvideo.storage="https://selenoid.autotests.cloud/video/"
-//        if(System.getProperty("videoStorage") != null)
-        attachVideo();
+        if(System.getProperty("video.storage") != null)
+            attachVideo();
         closeWebDriver();
     }
 }
